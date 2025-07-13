@@ -46,7 +46,6 @@ const Header = () => {
   const navigate = useNavigate();
 
 
-  // console.log('current socket ', socket)
 
 
 
