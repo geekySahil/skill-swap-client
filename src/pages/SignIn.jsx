@@ -33,7 +33,6 @@ const Signin = () => {
            },
            credentials: 'include',
            body: JSON.stringify(formData),
-           credentials: 'include' // Include credentials (cookies)
 
          });
          const result = await res.json()
