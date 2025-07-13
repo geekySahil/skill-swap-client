@@ -29,16 +29,16 @@ import {
 import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { Badge, IconButton, Menu,MenuItem,Popover,Button } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useSocket } from "../utils/socketContext";
+// import { useSocket } from "../utils/socketContext";
 import { FaBell } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi2";
 
 
 const Header = () => {
+  // const socket = useSocket()
   const { currentUser } = useSelector((state) => state.user);
   // console.log(currentUser.profilePicture)
   const dispatch = useDispatch();
-  // const socket = useSocket()
   const [isOpen, setIsOpen] = useState(false);
   const [isMatchesOpen, setIsMatchesOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -47,7 +47,6 @@ const Header = () => {
   const navigate = useNavigate();
 
 
-  // console.log('current socket ', socket)
 
 
   // useEffect(() => {
