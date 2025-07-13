@@ -38,7 +38,6 @@ const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
   // console.log(currentUser.profilePicture)
   const dispatch = useDispatch();
-  // const socket = useSocket()
   const [isOpen, setIsOpen] = useState(false);
   const [isMatchesOpen, setIsMatchesOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -50,21 +49,6 @@ const Header = () => {
   // console.log('current socket ', socket)
 
 
-  // useEffect(() => {
-
-  //   if(currentUser) {
-  //     socket.on('recievenotification', (data) => {
-  //       console.log('EXECUTED.......', data)
-  //       dispatch(setNotificationToState(data))
-  //     })
-  //     return ()=> {
-  //     socket.off('recievenotification')
-
-  //     }
- 
-  //   }
-   
-  // }, []);
 
   // console.log('all notifications ', notifications)
 
