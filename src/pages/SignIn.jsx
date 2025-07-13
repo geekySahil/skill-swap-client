@@ -26,7 +26,7 @@ const Signin = () => {
        
        try {
          dispatch(signInStart())
-         const res = await fetch('http://localhost:4000/api/v1/user/login', {
+         const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/user/login`, {
            method: 'POST',
            headers: {
              'Content-Type': 'application/json',

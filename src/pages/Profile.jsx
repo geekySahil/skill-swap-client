@@ -41,7 +41,7 @@ const MyAccount = ({ user }) => {
 
         try {
             dispatch(updateUserStart())
-            const res = await fetchWithAuth('http://localhost:4000/api/v1/user/change-profile', {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/user/change-profile`, {
                 method: 'POST',
                 body: data,
                 credentials: 'include'
@@ -71,7 +71,7 @@ const MyAccount = ({ user }) => {
 
         try {
             dispatch(updateUserStart())
-            const res = await fetchWithAuth('http://localhost:4000/api/v1/user/update-account', {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/user/update-account`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const MyAccount = ({ user }) => {
 
     const handleDeleteAccount = async () => {
       try {
-          const res = await fetchWithAuth('http://localhost:4000/api/v1/user/delete-user', {
+          const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/user/delete-user`, {
               method: 'DELETE',
               headers: {
                   'Content-Type': 'application/json',

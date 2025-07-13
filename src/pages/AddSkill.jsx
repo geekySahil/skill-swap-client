@@ -39,7 +39,7 @@ const AddSkill = () => {
         // Add logic to handle form submission, such as making an API call
         try {
             dispatch(addSkillStart())
-            const res = await fetchWithAuth('http://localhost:4000/api/v1/skills/add-skill', {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/add-skill`, {
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -72,7 +72,7 @@ const AddSkill = () => {
         console.log(formData)
         try {
             dispatch(updateSkillStart())
-            const res = await fetch(`http://localhost:4000/api/v1/skills/update-skill/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/skills/update-skill/${id}`, {
                 method: 'PUT',
                 headers:{
                     'Content-Type':'application/json'

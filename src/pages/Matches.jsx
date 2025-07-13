@@ -50,7 +50,7 @@ const Matches = () => {
     for (const match of matches) {
       if (match.yourStatus === 'accepted' && match.matchStatus === 'accepted') {
         try {
-          const res = await fetchWithAuth("http://localhost:4000/api/v1/mates/create-new-mate", {
+          const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/create-new-mate`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const Matches = () => {
   const findMatches = async () => {
     try {
       dispatch(start());
-      const response = await fetchWithAuth("http://localhost:4000/api/v1/matches/find-matches", {
+      const response = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/matches/find-matches`, {
         credentials: "include",
       }, dispatch);
 
@@ -91,7 +91,7 @@ const Matches = () => {
 
   const handleRequest = async (match, body) => {
     try {
-      const res = await fetchWithAuth(`http://localhost:4000/api/v1/matches/update-match-status/${match._id}`, {
+      const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/matches/update-match-status/${match._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

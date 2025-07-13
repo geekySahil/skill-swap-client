@@ -43,7 +43,7 @@ function VideoCall() {
 
   const clearMeeting = async () => {
     try {
-      const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/cancel-meeting/${mateId}`, {
+      const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/cancel-meeting/${mateId}`, {
        method: 'DELETE',
        headers: {
           'Content-Type': 'application/json'

@@ -52,7 +52,7 @@ const Dashboard = () => {
         dispatch(setNotificationStart());
         try {
             const res = await fetchWithAuth(
-                `http://localhost:4000/api/v1/notifications/get-notifications`,
+                `${import.meta.env.VITE_API_URI}/api/v1/notifications/get-notifications`,
                 {
                     method: "GET",
                     headers: {
@@ -78,7 +78,7 @@ const Dashboard = () => {
         try {
             dispatch(start());
             const response = await fetchWithAuth(
-                "http://localhost:4000/api/v1/matches/find-matches",
+                `${import.meta.env.VITE_API_URI}/api/v1/matches/find-matches`,
                 {
                     credentials: "include",
                 }, dispatch
@@ -122,7 +122,7 @@ const Dashboard = () => {
 
     const handleRequest = async (match, body) => {
         try {
-          const res = await fetchWithAuth(`http://localhost:4000/api/v1/matches/update-match-status/${match._id}`, {
+          const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/matches/update-match-status/${match._id}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ const Dashboard = () => {
 
     const fetchMeetings = async () => {
         try {
-            const res = await fetch(`http://localhost:4000/api/v1/mates/get-all-meetings/${currentUser._id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/mates/get-all-meetings/${currentUser._id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

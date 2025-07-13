@@ -49,7 +49,7 @@ const MatchDetail = () => {
   const handleRequest = async (matchId, body) => {
   
     try {
-        const res = await fetchWithAuth(`http://localhost:4000/api/v1/matches//update-match-status/${matchId}`, {
+        const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/matches//update-match-status/${matchId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ const MatchDetail = () => {
   const handleAddReview = async(body) => {
     try {
       const res = await fetchWithAuth(
-        `http://localhost:4000/api/v1/feedback/add-feedback/${match.user._id}`,
+        `${import.meta.env.VITE_API_URI}/api/v1/feedback/add-feedback/${match.user._id}`,
         {
           method: 'POST',
           headers: {
@@ -133,7 +133,7 @@ const MatchDetail = () => {
      setEditingReview(null)
      try {
       const res = await fetchWithAuth(
-        `http://localhost:4000/api/v1/feedback/update-feedback/${reviewId}`,
+        `${import.meta.env.VITE_API_URI}/api/v1/feedback/update-feedback/${reviewId}`,
         {
           method: 'POST',
           headers: {
@@ -169,7 +169,7 @@ const MatchDetail = () => {
   const handleDeleteReview = async(reviewId) => {
     try {
       const res = await fetchWithAuth(
-        `http://localhost:4000/api/v1/feedback/delete-feedback/${reviewId}`,
+        `${import.meta.env.VITE_API_URI}/api/v1/feedback/delete-feedback/${reviewId}`,
         {
           method: 'DELETE',
           credentials: "include",

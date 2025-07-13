@@ -113,7 +113,7 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/v1/user/logout", {
+      const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/user/logout`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

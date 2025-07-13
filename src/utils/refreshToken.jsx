@@ -42,7 +42,7 @@ export const fetchWithAuth = async (url, options = {}, dispatch) => {
 };
 
 export const refreshToken = async () => {
-    return await fetch('http://localhost:4000/api/v1/user/refresh', {
+    return await fetch(`${import.meta.env.VITE_API_URI}/api/v1/user/refresh`, {
         method: 'POST',
         credentials: 'include',  // Send the HttpOnly refresh token with the request
     });

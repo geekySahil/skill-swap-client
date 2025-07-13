@@ -16,7 +16,7 @@ const RatingsPage = () => {
   const getFeedbacks = async () => {
     try {
       const res = await fetchWithAuth(
-        `http://localhost:4000/api/v1/feedback/get-feedbacks/${currentUser._id}`,
+        `${import.meta.env.VITE_API_URI}/api/v1/feedback/get-feedbacks/${currentUser._id}`,
         {
           method: 'GET',
           headers: {

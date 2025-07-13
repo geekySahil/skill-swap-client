@@ -15,7 +15,7 @@ export const SocketProvider = ({ children }) => {
 
     const {currentUser} = useSelector(state => state.user)
     
-    const socket = useMemo(() => io("localhost:4000"), []);
+    const socket = useMemo(() => io(`${import.meta.env.VITE_API_URI}`), []);
 
 
     if(currentUser){

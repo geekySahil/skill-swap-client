@@ -59,7 +59,7 @@ const MateDetails = () => {
 
     const getAllMeetings = async () => {
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/meetings/${mateId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/meetings/${mateId}`, {
                 method: 'GET',
                 headers:{
                     'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ const MateDetails = () => {
 
     const saveNotifications = async(message) => {
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/notifications/set-notification`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/notifications/set-notification`, {
                 method: 'PUT',
                 headers:{
                    'Content-Type':'application/json'
@@ -110,7 +110,7 @@ const MateDetails = () => {
 
         const {topic, time} = data;
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/set-meeting/${mate._id}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/set-meeting/${mate._id}`, {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -170,7 +170,7 @@ const MateDetails = () => {
        try {
         console.log('meeting id', meetingId)
 
-         const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/cancel-meeting/${mate._id}`, {
+         const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/cancel-meeting/${mate._id}`, {
              method: 'DELETE',
              headers: {
                 'Content-Type': 'application/json'

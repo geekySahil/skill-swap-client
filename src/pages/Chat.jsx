@@ -12,7 +12,7 @@ import { io } from 'socket.io-client';
 import { useSocket } from '../utils/socketContext.jsx';
 import { fetchWithAuth } from '../utils/refreshToken.jsx';
 
-const socket = io('http://localhost:4000'); 
+const socket = io(`${import.meta.env.VITE_API_URI}`); 
 
 
 
@@ -95,7 +95,7 @@ const Chat = () => {
 
     const getAllMessages = async() => {
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/messages/${mateId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/messages/${mateId}`, {
                 method: 'GET',
                 credentials: 'include'
             }, dispatch)
@@ -118,7 +118,7 @@ const Chat = () => {
 
     const saveMessageToDatabase = async(message) => {
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/save-messages/${mateId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/save-messages/${mateId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type':'application/json'
@@ -165,7 +165,7 @@ const Chat = () => {
             setDeleteError("Its to late to delete this message")
         } else{
             try {
-                const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/delete-message/${mateId}`, {
+                const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/delete-message/${mateId}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
@@ -191,7 +191,7 @@ const Chat = () => {
 
     const saveNotifications = async(message) => {
       try {
-          const res = await fetchWithAuth(`http://localhost:4000/api/v1/notifications/set-notification`, {
+          const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/notifications/set-notification`, {
               method: 'PUT',
               headers:{
                  'Content-Type':'application/json'

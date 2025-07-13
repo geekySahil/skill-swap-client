@@ -20,7 +20,7 @@ const UserSearch = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await fetchWithAuth(`http://localhost:4000/api/v1/user/search/${username}`, {
+      const response = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/user/search/${username}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

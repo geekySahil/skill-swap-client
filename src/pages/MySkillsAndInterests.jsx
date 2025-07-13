@@ -27,7 +27,7 @@ const MySkillsAndInterests = () => {
     useEffect(() => {
         (async () => {
             try {
-                const res1 = await fetchWithAuth('http://localhost:4000/api/v1/skills/wanted-skills', {
+                const res1 = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/wanted-skills`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ const MySkillsAndInterests = () => {
     useEffect(() => {
         (async () => {
             try {
-                const res2 = await fetchWithAuth('http://localhost:4000/api/v1/skills/skills-collection', {
+                const res2 = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/skills-collection`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ const MySkillsAndInterests = () => {
     const handleDeleteInterest = async (skillId) => {
         try {
             dispatch(deleteSkillStart());
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/skills/delete-wanted-skill/${skillId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/delete-wanted-skill/${skillId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -124,7 +124,7 @@ const MySkillsAndInterests = () => {
     const handleDeleteSkill = async (skillId) => {
         try {
             dispatch(deleteSkillStart());
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/skills/delete-skill/${skillId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/delete-skill/${skillId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

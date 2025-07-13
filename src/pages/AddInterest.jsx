@@ -30,7 +30,7 @@ const AddInterest = () => {
         e.preventDefault();
         try {
             dispatch(addSkillStart());
-            const res = await fetchWithAuth('http://localhost:4000/api/v1/skills/add-wantedSkill', {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/skills/add-wantedSkill`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ const AddInterest = () => {
         e.preventDefault();
         try {
             dispatch(updateSkillStart());
-            const res = await fetch(`http://localhost:4000/api/v1/skills/update-wanted-skill/${id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/skills/update-wanted-skill/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

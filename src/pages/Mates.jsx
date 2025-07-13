@@ -18,7 +18,7 @@ const Mates = () => {
 
     const fetchMates = async () => {
         try {
-            const response = await fetchWithAuth('http://localhost:4000/api/v1/mates/get-mates', {
+            const response = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/get-mates`, {
                 method: 'GET',
                 credentials: 'include'
             },dispatch);
@@ -44,7 +44,7 @@ const Mates = () => {
     const handleUnmate = async (mateId) => {
         setShowMenu(false);
         try {
-            const res = await fetchWithAuth(`http://localhost:4000/api/v1/mates/unmate/${mateId}`, {
+            const res = await fetchWithAuth(`${import.meta.env.VITE_API_URI}/api/v1/mates/unmate/${mateId}`, {
                 method: 'DELETE',
                 credentials: 'include'
             },dispatch);

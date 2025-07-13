@@ -49,7 +49,7 @@ const Signup = () => {
           formDataToSend.append('location', formData.location);
           formDataToSend.append('profilePicture', formData.profilePicture);
       
-          const res = await fetch('http://localhost:4000/api/v1/user/signup', {
+          const res = await fetch(`${import.meta.env.VITE_API_URI}/api/v1/user/signup`, {
             method: 'POST',
             body: formDataToSend,
             credentials: 'include'
