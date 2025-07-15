@@ -165,9 +165,7 @@ const Header = () => {
         <button onClick={toggleMenu} className="mr-4 focus:outline-none">
           {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
         </button>
-        <span className="font-serif">Skills</span>
-        <span className="text-3xl"><GiSwapBag /></span>
-        <span className="font-serif">Swap</span>
+        <h2 className="text-2xl font-semibold font-mono"><span className="font-semibold">{"<"}</span>SkillSwap<span className="font-semibold">{"/>"}</span></h2>
       </div>
          
           {currentUser? <div key = {Date.now()} className="ml-auto pr-2">
